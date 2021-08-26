@@ -1,0 +1,263 @@
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml" class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRJS-4e38b34dd3bedd33079","applicationID":"248603287","transactionName":"dV1YQBcJCA8BR0lHQllWQ1cROQcCEFABWEJfV0UbAhMNBwFGSURYWUU=","queueTime":1,"applicationTime":224,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-4e38b34dd3bedd33079",applicationID:"248603287"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is Air Conditioning? The Home AC System Explained</title>
+<meta name="description" content="Having your home at the right temperature at any time of the year is not the easiest of tasks, but it’s something we all try to achieve.">
+<link rel="canonical" href="https://www.boxt.co.uk/air-conditioning/guides/what-is-air-conditioning">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="OxH2WBn+CmS2pgMptX9BZavUhUkDsDR4/3hJpV59c3wE3WUshFL4sVlh1h6Cpca+EjGCA9qzVcvegAmqes0t5g==" />
+
+    <script>
+     if (self != top) { top.location = self.location; };
+
+     var win = window, doc = win.document, docElem = doc.documentElement;
+     docElem.className = docElem.className.replace(/\bno-js\b/g, '') + ' js ';
+     window.bugsnagApiKey = '4a07be10967d3b7627e7acf23e6fd84e',
+     window.bugsnagAppVersion = '10.8.0',
+     window.bugsnagReleaseStage = 'production',
+     window.googleTrackingCode = 'UA-92300458-2';
+     window.iconsFromSprites = function(sprite) { return "/packs/images/icons.efb3046ceaf33e6a09428a220c3b2fcc.svg#" + sprite };
+    </script>
+
+
+    <script src="/packs/js/runtime~application-979f118fb176bec3bc1a.js"></script>
+<script src="/packs/js/vendors~affiliates~aircon-landing~application~boiler-landing~call-out~direct-upload~email-verificati~0754056c-cc2cd9472dc361994269.chunk.js"></script>
+<script src="/packs/js/vendors~affiliates~aircon-landing~application~boiler-landing~call-out~direct-upload~ev-charger-landi~a263c1c1-839e511fb8c4382c4372.chunk.js"></script>
+<script src="/packs/js/application-c0f79da3300db03bd63b.chunk.js"></script>
+    <script src="/packs/js/runtime~standalone-bcdce2b3769c02b5ed36.js"></script>
+<script src="/packs/js/standalone-2818af6cd5b846089417.chunk.js"></script>
+    
+
+      
+
+      <script>
+       (function(w,d,s,l,i){
+         w[l]=w[l]||[];w[l].push({
+           'gtm.start': new Date().getTime(),event:'gtm.js'
+         });
+         var f=d.getElementsByTagName(s)[0],
+             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+         j.async=true;
+         j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+       })(window,document,'script','dataLayer','GTM-NDJRN9K');
+      </script>
+
+      <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-92300458-2', 'auto', { 'allowLinker': true });
+       ga('require', 'linker');
+       ga('linker:autoLink', ['divido.com']);
+       ga('require', 'linkid');
+       ga('require', 'GTM-MD7BF3V');
+       ga('send', 'pageview');
+
+       
+      </script>
+
+      <script>
+       var ezt=ezt||[];!function(){var a=document.createElement('script');a.src=('https:'===document.location.protocol?'https://secure':'http://pixel')+'.quantserve.com/aquant.js?a=p-acKfRUUEjUHpN',a.async=!0,a.type='text/javascript';var b=document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a,b)}(),ezt.push({qacct:'p-acKfRUUEjUHpN',orderid:'',revenue:''});
+      </script>
+
+
+
+
+      <!-- Start of LiveChat (www.livechatinc.com) code -->
+      <script type="text/javascript">
+       window.__lc = window.__lc || {};
+       window.__lc.license = 8704796;
+       window.__lc.ga_version = "gtm";
+       (function() {
+         var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+         lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+       })();
+      </script>
+      <!-- End of LiveChat code -->
+
+    <!-- main css placed here to ensure Optanon styles are overwritten -->
+    <link rel="stylesheet" media="screen" href="/packs/css/application-634c905a.chunk.css" />
+
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/packs/media/images/logos/apple-touch-icon-57x57-f72aae87387bbd367c6d1c1da5c611b0.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/packs/media/images/logos/apple-touch-icon-114x114-b46a1860734f2dba2f7956c40be71756.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/packs/media/images/logos/apple-touch-icon-72x72-716f17c2783911fb06c3f729cff67227.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/packs/media/images/logos/apple-touch-icon-144x144-9601e4b4f6ede4f0509df2c0babde5ee.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/packs/media/images/logos/apple-touch-icon-60x60-8c8bea3a2bbd7de4da96cb34e76e8161.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/packs/media/images/logos/apple-touch-icon-120x120-c56cef6607d5a01db6affc40b1084fda.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/packs/media/images/logos/apple-touch-icon-76x76-6c8901394623fd92885dfbfbe4712d22.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/packs/media/images/logos/apple-touch-icon-152x152-b70063ef513457bfeed8bda5b62679f0.png">
+    <link rel="icon" type="image/png" href="/packs/media/images/logos/favicon-32x32-e34b316e9890de210f212d37b0f60ee5.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/packs/media/images/logos/favicon-16x16-abca2ca8b5dbfa0a68f0e92aba829141.png" sizes="16x16">
+  </head>
+
+  <body>
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDJRN9K"
+                        height="0" width="0" class="is-hidden"></iframe></noscript>
+
+      <noscript><img src="//pixel.quantserve.com/pixel/p-acKfRUUEjUHpN.gif?labels=_fp.event.Default" class="is-hidden" border="0" height="1" width="1" alt="Quantcast"/></noscript>
+
+    <!--[if lte IE 9]>
+      <div class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+    <![endif]-->
+    <div id="tel-number" hidden>0800 193 7777</div>
+
+    <div class="page-content  ">
+      <div id="react-global-nav"
+  class="react-global-nav"
+  data-tel="0800 193 7777"
+  data-items="[{&quot;label&quot;:&quot;Products&quot;,&quot;id&quot;:&quot;products_menu&quot;,&quot;submenuHasIcon&quot;:true,&quot;submenu&quot;:[{&quot;icon&quot;:&quot;nav-boilers&quot;,&quot;isCurrent&quot;:false,&quot;label&quot;:&quot;Boilers&quot;,&quot;url&quot;:&quot;/boilers&quot;},{&quot;icon&quot;:&quot;nav-aircons&quot;,&quot;isCurrent&quot;:false,&quot;label&quot;:&quot;Air conditioning&quot;,&quot;url&quot;:&quot;/air-conditioning&quot;},{&quot;icon&quot;:&quot;nav-ev&quot;,&quot;isCurrent&quot;:false,&quot;label&quot;:&quot;Electric vehicle chargers&quot;,&quot;url&quot;:&quot;/ev-chargers&quot;},{&quot;icon&quot;:&quot;nav-home-cover&quot;,&quot;isCurrent&quot;:false,&quot;label&quot;:&quot;Home cover&quot;,&quot;url&quot;:&quot;/home-cover&quot;}]},{&quot;label&quot;:&quot;About BOXT&quot;,&quot;id&quot;:&quot;about_boxt_menu&quot;,&quot;submenuHasIcon&quot;:false,&quot;submenu&quot;:[{&quot;isCurrent&quot;:false,&quot;label&quot;:&quot;How BOXT works&quot;,&quot;url&quot;:&quot;/how-boxt-works&quot;},{&quot;isCurrent&quot;:false,&quot;label&quot;:&quot;Who we are&quot;,&quot;url&quot;:&quot;/who-we-are&quot;},{&quot;isCurrent&quot;:false,&quot;label&quot;:&quot;Boiler Guides&quot;,&quot;url&quot;:&quot;/boilers/guides&quot;},{&quot;isCurrent&quot;:false,&quot;label&quot;:&quot;Air Conditioning Guides&quot;,&quot;url&quot;:&quot;/air-conditioning/guides&quot;},{&quot;isCurrent&quot;:false,&quot;label&quot;:&quot;Contact us&quot;,&quot;url&quot;:&quot;/contact-us&quot;}]},{&quot;label&quot;:&quot;Installation&quot;,&quot;id&quot;:&quot;installers_menu&quot;,&quot;submenuHasIcon&quot;:false,&quot;submenu&quot;:[{&quot;isCurrent&quot;:false,&quot;label&quot;:&quot;Your installation experience&quot;,&quot;url&quot;:&quot;/your-installer-experience&quot;},{&quot;isCurrent&quot;:false,&quot;label&quot;:&quot;Become a BOXT installer&quot;,&quot;url&quot;:&quot;/become-a-boxt-installer&quot;}]},{&quot;isCurrent&quot;:false,&quot;label&quot;:&quot;FAQs&quot;,&quot;url&quot;:&quot;/faqs&quot;},{&quot;isCurrent&quot;:false,&quot;label&quot;:&quot;Finance&quot;,&quot;url&quot;:&quot;/finance&quot;}]"
+  data-trustpilot=""
+  data-nav-mini=""
+  data-affiliate-logo=""
+  data-subnav-is-open="true"
+  data-active-subnav-id=""
+  data-active-cv-banner=""
+  data-halfords-partnership-enabled="false"
+>
+</div>
+
+
+      <div class="l-main" role="main">
+        <div class="guides">
+  <div class="l-container">
+    <div class="g g--gutter g--alignCenter">
+      <div class="g-col g-span12 g-span9--wide rtc">
+        <a class="pagination-link" href="/air-conditioning/guides">&lt; Back to guides</a>
+
+        <h1>What Is Air Conditioning? The Home AC System Explained</h1>
+
+        <p>Having your home at the right temperature at any time of the year is not the easiest of tasks, but it&rsquo;s something we all try to achieve. During the summer especially, your home can easily become unbearably warm and sometimes, opening windows and doors simply don&rsquo;t provide enough relief.</p>
+<p><a href="https://www.boxt.co.uk/air-conditioning" rel="nofollow">Home air conditioning</a> is slowly becoming a popular choice for UK homes after not being overly common here for a number of years. If your home tends to become overly hot in the summer, then you may want to consider home ac units.</p>
+<p>What is air conditioning? What are the different types? In this guide, we&rsquo;ll explain how your home could benefit from an air conditioning system and how we can help you to choose your ideal A/C unit.</p>
+<p></p>
+<p><img src="https://cdn.buttercms.com/v3hQ6khwRKmlZmw7Jj1H" alt="undefined" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p></p>
+<h2>What is air conditioning?</h2>
+<p>Air conditioning (often referred to as AC, A/C or air con) is a system used to cool down the temperature in an inside space by removing the existing heat and moisture from the room.</p>
+<p>Essentially, they work by taking warm air into a system and dispersing cold air, but there is much more to this process.</p>
+<p>During the home <a href="https://www.boxt.co.uk/air-conditioning/guides/how-air-conditioning-works" rel="nofollow">air conditioning process</a>, a fluid (normally water or air) is cooled by the evaporation of another fluid, called the refrigerant. Your air conditioner quickly converts gas into a liquid and back again using chemicals that remove the warm air from inside your home. It then gets disposed of outside. In simple terms, an air conditioning system controls the temperature, humidity and air quality in indoor spaces.</p>
+<p>While the basic concept behind air conditioning has been around since the ancient Egyptian times, the very first modern air conditioning unit was invented back in 1902 by Willis Carrier in response to an air quality problem by a New York publishing company.</p>
+<p>The invention not only controls the temperature, but also the humidity of a space, cooling the air by flowing it over cold coils, allowing them to control the moisture in the air. Shortly after, air conditioning was introduced to cars and also to improve home comfort. Over the years, the sales of air conditioning units increased dramatically as a result of consumer needs.</p>
+<h3>What is manual air conditioning?</h3>
+<p>Manual air conditioning gives you the control to turn your unit on and off whenever you feel the need. There is no waiting around for the air conditioning to kick in as they&rsquo;re not controlled by a thermostat.</p>
+<p>If you&rsquo;d prefer your air conditioning system to be automatic with little input needed from you, then you&rsquo;ll need an automatic air conditioning system. This will ensure your system will turn on when you set it to, so you don&rsquo;t need to worry about revisiting the controls each day.</p>
+<h3>How much is air conditioning?</h3>
+<p>Air conditioning systems can vary in price, as with any other appliance you buy. A cheap air conditioning unit can range from around &pound;500 to &pound;1000, with more expensive models setting you back around &pound;6000 or more. For a more accurate, personalised quote for which air conditioning system will be ideal for your home, use our &lsquo;Find An A/C System&rsquo; tool. It&rsquo;s easy to use and will give you recommendations in two minutes.</p>
+<h2>Types of air conditioning.</h2>
+<p>There are many different <a href="https://www.boxt.co.uk/air-conditioning/guides/wall-mounted-air-conditioning" rel="nofollow">types of air conditioning</a> units, and which one you choose will depend entirely on your individual needs. For example, how large the area is, how much heat is generated in that particular area and which type of controls you need. Having the right type for your needs is essential to keep your energy consumption under control and keeping your space at a bearable temperature. Here are the main types:</p>
+<h3>Wall-Mounted, Split Unit Air Conditioning System</h3>
+<p></p>
+<p><img src="https://cdn.buttercms.com/40G8ecPCSqd4nUCpk86g" alt="undefined" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p></p>
+<p>The <a href="https://www.boxt.co.uk/air-conditioning/guides/split-system-air-conditioner" rel="nofollow">split system air conditioner</a> consists of both an outside and an inside unit. The outside unit is installed on or near the exterior wall of the room you&rsquo;re looking to cool, and houses the compressor, condenser coil, and expansion coil. The indoor unit sits on the wall and contains the cooling coil and an air filter. Both units are connected with wires and tubing.</p>
+<p>A great option for homes, split systems are very quiet as the compressor and fan are located in the outside unit and allow for multiple indoor units that are connected to a single outdoor box.</p>
+<h3>Packaged Air Conditioner</h3>
+<p>While traditionally, an air conditioning system is comprised of two parts; an outdoor condenser and an indoor air handler, in a packaged air conditioner unit, all of the parts are enclosed in a single box, usually located on the outside wall or roof of a building.</p>
+<p>Packaged air conditioning systems have a higher cooling or heating capacity, making them ideal for use in larger houses or commercial buildings. They work by installing the single component and connecting the system to ducts laid throughout various rooms. By using electricity as its power source, the unit circulates the refrigerant through the coils. Warm air is then pulled in by a fan and passes over the cold evaporator coil, cooling it. The cool air is then pushed through the ducts into the building.</p>
+<h3>Central Air Conditioning System</h3>
+<p>Central air conditioning systems are generally used to cool large homes or buildings such as gyms or offices. These central systems are the most common type of air cooling systems as they are quick and efficient at cooling down larger areas.</p>
+<p>The system works from a cooling compressor, which is located outside. Much like other air conditioners, a coil filled with refrigerant is used to cool the air, which is then blown out by a fan and circulated throughout the building with the use of ducts located on the walls or floors. If there is warm air in a room, the ducts will register the heat and the air will then be transported back to the air conditioner to be pushed outside.</p>
+<h2>Other types of AC systems</h2>
+<p>These types of air conditioning systems aren&rsquo;t as popular in the UK but are definitely worth a mention:</p>
+<h3>Window Air Conditioner</h3>
+<p>These air conditioners are installed at a window and is used to cool a single room or space. They&rsquo;re ideal for homes where people tend to occupy one room at a time. A window air conditioning system is a standalone, self-contained unit, where all of the components sit inside a single box.</p>
+<p>The window air conditioner is relatively cheap to purchase and operate and is also very compact. These devices are installed along the lower half of the window and pull hot air from the room and push it outside, blowing cold air into the space to cool it down.</p>
+<h3>Portable air conditioning unit</h3>
+<p>This small air conditioning unit does what it says on the tin. It&rsquo;s a mobile unit that doesn&rsquo;t require permanent installation. They&rsquo;re easy to install and work by removing the heat from the air in your room from a small exhaust. This unit can be moved from room to room to wherever needs the most attention.</p>
+<h4>What is air conditioning? Allow us to help you further.</h4>
+<p>You&rsquo;ll probably need a helping hand when it comes to <a href="https://www.boxt.co.uk/air-conditioning/guides/how-to-choose-air-conditioner" rel="nofollow">choosing the right air conditioning uni</a>t for your home. Here at BOXT, we can not only help you to identify the best system for you, but we&rsquo;ll also install it for you too.</p>
+<p>If you need more information about the right air conditioning system for you, start a conversation with one of our engineers using the live chat feature on our website. If you wish to enquire about our air conditioning installation services, give us a call so we can assist you further: 0800 193 7777.</p>
+
+        <a class="pagination-link" href="/air-conditioning/guides">&lt; Back to guides</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+        <div class="backtotop-wrapper">
+          <a href="#top" class="btn backtotop">
+            <span class="btn-content backtotop-content">
+              <span class="btn-text backtotop-copy is-hidden--narrow">Back to top</span>
+              <svg class="btn-icon backtotop-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/packs/images/icons.efb3046ceaf33e6a09428a220c3b2fcc.svg#up"></use></svg>
+            </span>
+          </a>
+        </div>
+
+      <footer class="footer">
+  <div class="footer-container">
+    <div class="l-container">
+      <div class="g g--gutter">
+        <div class="g-col g-span12">
+          <h2 class="footer-title">AC Adithi R Warrier</h2>
+        </div>
+        <div class="g-col g-span12 g-span6--mid g-span7--wide">
+          <p class="footer-copy__rights">AC(Air Conditioner)</p>
+          <p class="footer-copy__legal">
+            Adithi R Warrier
+          </p>
+          <nav class="footer-social-links">
+            <a href="https://www.facebook.com/weareboxt/" rel="noopener noreferrer" target="_blank" class="footer-social-links__link">
+              <svg class="icon footer-social-links__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/packs/images/icons.efb3046ceaf33e6a09428a220c3b2fcc.svg#social-facebook"></use></svg>
+            </a>
+            <a href="https://twitter.com/weareboxt" rel="noopener noreferrer" target="_blank" class="footer-social-links__link">
+              <svg class="icon footer-social-links__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/packs/images/icons.efb3046ceaf33e6a09428a220c3b2fcc.svg#social-twitter"></use></svg>
+            </a>
+            <a href="https://www.instagram.com/weareboxt/" rel="noopener noreferrer" target="_blank" class="footer-social-links__link">
+              <svg class="icon footer-social-links__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/packs/images/icons.efb3046ceaf33e6a09428a220c3b2fcc.svg#social-instagram"></use></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/11069518/" rel="noopener noreferrer" target="_blank" class="footer-social-links__link">
+              <svg class="icon footer-social-links__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/packs/images/icons.efb3046ceaf33e6a09428a220c3b2fcc.svg#social-linkedin"></use></svg>
+            </a>
+          </nav>
+        </div>
+        <div class="g-col g-span12 g-span6--mid g-span5--wide">
+          <div class="g g--gutter g--alignCenter">
+            <div class="g-col g-span12 g-span9--huge">
+              <div class="footer-boxt-links__wrapper">
+                <div class="g g--gutter g--alignCenter">
+                  <div class="g-col g-span6">
+                    <nav class="footer-boxt-links__col">
+                      <a class="footer-boxt-links__link" href="/faqs">AC</a>
+                      <a class="footer-boxt-links__link" href="/contact-us">AIR CONDITIONER</a>
+                      <a class="footer-boxt-links__link" href="/finance">(AIR CONDITIONER</a>
+                      <a href="https://uk.trustpilot.com/review/boxt.co.uk" rel="noopener noreferrer" target="_blank" class="footer-boxt-links__link">
+                        Adithi R Warrier
+                      </a>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="g-col g-span12 g-span3--huge">
+              <div class="footer-certificates">
+                <svg class="footer-certificates__gassafe icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/packs/images/icons.efb3046ceaf33e6a09428a220c3b2fcc.svg#logo-gassafe-reg"></use></svg>
+                <img class="footer-certificates__refcom" srcset="/packs/media/images/certificates/refcom-footer@2x-3105e9362d700f7e75b252df630e05e0.png 2x" src="/packs/media/images/certificates/refcom-footer-3ad914421f402814d3757b0471b3b616.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+    
+    <script src="//rum-static.pingdom.net/pa-5b69f4ab54acd300160000a6.js" async></script>
+
+    <div id="react-promotions" data-error="" data-json="{}"></div>
+  </body>
+</html>
